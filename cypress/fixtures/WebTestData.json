@@ -9,7 +9,9 @@
     "last_name": "raheel",
     "age": "30",
     "salary": "5000",
-    "department":"QA"
+    "department":"QA",
+
+    "bookTitle":"Learning JavaScript Design Patterns"
 
 }
   

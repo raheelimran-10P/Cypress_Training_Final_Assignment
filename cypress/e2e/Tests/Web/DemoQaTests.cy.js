@@ -76,4 +76,26 @@ describe('Assignment Test cases', { tags: ['@assignment', '@training'] }, () => 
 
   });
 
+  it('Test Case - 04',{tags: '@task-04'}, () => {
+
+    demoQaHomePage.goToElementPage();
+    demoQaHomePage.goToBooksTab()
+
+    // Search for the book "Learning JavaScript Design Patterns"
+    demoQaHomePage.searchForBook(webTestData.bookTitle, setTimeout= 5000);
+
+    // Click on the searched book title
+    demoQaHomePage.clickOnBookTitle(webTestData.bookTitle);
+
+    // Assert the details
+    cy.wait(1000); // Wait for details to load (adjust wait time as needed)
+    demoQaHomePage.getISBN().should('contain.text', '9781449331818');
+    demoQaHomePage.getTitle().should('contain.text', 'Learning JavaScript Design Patterns');
+    demoQaHomePage.getSubtitle().should('contain.text', 'A JavaScript and jQuery Developer\'s Guide');
+    demoQaHomePage.getAuthor().should('contain.text', 'Addy Osmani');
+    demoQaHomePage.getPublisher().should('contain.text', 'O\'Reilly Media');
+    demoQaHomePage.getTotalPages().should('contain.text', '254');
+
+  });
+
 });

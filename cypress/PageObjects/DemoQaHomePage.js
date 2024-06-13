@@ -28,6 +28,16 @@ export class DemoQaHomePage {
     submitButtonwebtable = "#submit"; // ID locator for Submit button in form
     tableRows = ".rt-tbody .rt-tr-group"; // CSS locator for table rows
 
+    booksMenu = "(//span[contains(text(), 'Book Store')])[1]"; // XPath locator
+    searchBox = "#searchBox"; // ID locator for search box
+    bookTitleLink = "//div[@class='rt-tbody']//a[contains(text(), '{bookName}')]"; // XPath locator for searched book
+    isbnField = "//label[contains(text(), 'ISBN')]/following-sibling::p"; // XPath locator for ISBN
+    titleField = "//label[contains(text(), 'Title')]/following-sibling::p"; // XPath locator for Title
+    subtitleField = "//label[contains(text(), 'Subtitle')]/following-sibling::p"; // XPath locator for Subtitle
+    authorField = "//label[contains(text(), 'Author')]/following-sibling::p"; // XPath locator for Author
+    publisherField = "//label[contains(text(), 'Publisher')]/following-sibling::p"; // XPath locator for Publisher
+    totalPagesField = "//label[contains(text(), 'Total Pages')]/following-sibling::p"; // XPath locator for Total Pages
+
     goToElementPage(){
         cy.xpath(this.element_text).click()
     }
@@ -124,6 +134,43 @@ export class DemoQaHomePage {
 
     getLastTableRow() {
         return cy.get(this.tableRows).last();
+    }
+
+
+    goToBooksTab() {
+        cy.xpath(this.booksMenu).click({force: true});
+    }
+
+    searchForBook(bookName) {
+        cy.get(this.searchBox).type(bookName);
+    }
+
+    clickOnBookTitle(bookName) {
+        cy.xpath(this.bookTitleLink.replace('{bookName}', bookName)).click({force: true });
+    }
+
+    getISBN() {
+        return cy.xpath(this.isbnField).invoke('text');
+    }
+
+    getTitle() {
+        return cy.xpath(this.titleField).invoke('text');
+    }
+
+    getSubtitle() {
+        return cy.xpath(this.subtitleField).invoke('text');
+    }
+
+    getAuthor() {
+        return cy.xpath(this.authorField).invoke('text');
+    }
+
+    getPublisher() {
+        return cy.xpath(this.publisherField).invoke('text');
+    }
+
+    getTotalPages() {
+        return cy.xpath(this.totalPagesField).invoke('text');
     }
 
 }
