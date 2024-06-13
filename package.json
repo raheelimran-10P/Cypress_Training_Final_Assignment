@@ -1,0 +1,30 @@
+{
+  "name": "cypressframework",
+  "version": "1.0.0",
+  "description": "CypressFramework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "open cypress": "npx cypress open",
+    "cypress:all": "npx cypress run",
+    "run DemoTest": "npx cypress run --spec cypress/e2e/Tests/DemoTests.cy.js",
+    "run DemoTest in chrome": "npx cypress run --spec cypress/e2e/Tests/DemoTests.cy.js --browser chrome",
+    "run DemoTest all in chrome": "npx cypress run --spec cypress/e2e/Tests --browser chrome"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raheelimran-10P/CypressFramework.git"
+  },
+  "author": "Muhammad Raheel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raheelimran-10P/CypressFramework/issues"
+  },
+  "homepage": "https://github.com/raheelimran-10P/CypressFramework#readme",
+  "devDependencies": {
+    "cypress": "^13.6.6",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "cypress-xpath": "^2.0.1",
+    "dotenv": "^16.4.5"
+  }
+}
