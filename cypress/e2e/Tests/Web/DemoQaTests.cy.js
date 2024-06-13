@@ -30,6 +30,20 @@ describe('Assignment Test cases', { tags: ['@assignment', '@training'] }, () => 
 
   it('Test Case - 02',{tags: '@task-02'}, () => {
 
+    demoQaHomePage.goToElementPage();
+    demoQaHomePage.goToCheckBoxTab();
+
+    // Expand Home > Documents > Office
+    demoQaHomePage.expandHome();
+    demoQaHomePage.expandDocuments();
+    demoQaHomePage.expandOffice();
+
+    // Click on checkbox Public
+    demoQaHomePage.checkPublic();
+
+    // Assert the message
+    demoQaHomePage.getResultMessage().should('contain.text', 'You have selected :public');
+
   });
 
 });

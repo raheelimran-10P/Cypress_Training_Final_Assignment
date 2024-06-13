@@ -10,6 +10,12 @@ export class DemoQaHomePage {
     currentAddress = "#currentAddress"; // ID locator
     permanentAddress = "#permanentAddress"; // ID locator
     submitButton = "#submit"; // ID locator
+    checkboxMenu = "//span[contains(text(), 'Check Box')]"; // XPath locator
+    homeToggle = "//span[contains(text(), 'Home')]/parent::label/preceding-sibling::button";
+    documentsToggle = "//span[contains(text(), 'Documents')]/parent::label/preceding-sibling::button";
+    officeToggle = "//span[contains(text(), 'Office')]/parent::label/preceding-sibling::button";
+    publicCheckbox = "//span[contains(text(), 'Public')]/preceding-sibling::span[@class='rct-checkbox']"; // XPath locator for checkbox
+    resultMessage = "#result"; // ID locator for result message
 
     goToElementPage(){
         cy.xpath(this.element_text).click()
@@ -38,7 +44,31 @@ export class DemoQaHomePage {
     clickSubmit() {
         cy.get(this.submitButton).click();
     }
-    
+
+    goToCheckBoxTab(){
+        cy.xpath(this.checkboxMenu).click()
+    }
+
+    expandHome() {
+        cy.xpath(this.homeToggle).click();
+    }
+
+    expandDocuments() {
+        cy.xpath(this.documentsToggle).click();
+    }
+
+    expandOffice() {
+        cy.xpath(this.officeToggle).click();
+    }
+
+    checkPublic() {
+        cy.xpath(this.publicCheckbox).click();
+    }
+
+    getResultMessage() {
+        return cy.get(this.resultMessage);
+    }
+
 }
 
 export const demoQaHomePage = new DemoQaHomePage()
