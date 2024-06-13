@@ -1,0 +1,47 @@
+{
+    "newUser": {
+      "name": "John Doe",
+      "username": "johndoe",
+      "email": "johndoe@example.com",
+      "address": {
+        "street": "123 Elm Street",
+        "suite": "Apt. 456",
+        "city": "Springfield",
+        "zipcode": "12345",
+        "geo": {
+          "lat": "-37.3159",
+          "lng": "81.1496"
+        }
+      },
+      "phone": "1-770-736-8031",
+      "website": "johndoe.com",
+      "company": {
+        "name": "ABC Inc.",
+        "catchPhrase": "Creating stuff",
+        "bs": "Stuff creation"
+      }
+    },
+    "updatedUser": {
+      "name": "Jane Smith",
+      "username": "janesmith",
+      "email": "janesmith@example.com",
+      "address": {
+        "street": "456 Maple Avenue",
+        "suite": "Suite 789",
+        "city": "Springfield",
+        "zipcode": "54321",
+        "geo": {
+          "lat": "40.7128",
+          "lng": "-74.0060"
+        }
+      },
+      "phone": "1-800-555-1234",
+      "website": "janesmith.com",
+      "company": {
+        "name": "XYZ Corp.",
+        "catchPhrase": "Innovating the future",
+        "bs": "Innovation"
+      }
+    }
+  }
+  

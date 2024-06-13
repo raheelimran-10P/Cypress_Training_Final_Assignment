@@ -1,12 +1,3 @@
 {
-    "url": "https://reqres.in",
-    "newUser" : {
-        "name": "John Doe",
-        "job": "Software Engineer"
-       },
-    "updatedUser" : {
-    "name": "Muhammad Raheel",
-    "job": "QA Engineer"
-    }
-    
+    "url": "https://jsonplaceholder.typicode.com/users"
 }
