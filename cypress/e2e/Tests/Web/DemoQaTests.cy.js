@@ -46,4 +46,34 @@ describe('Assignment Test cases', { tags: ['@assignment', '@training'] }, () => 
 
   });
 
+  it('Test Case - 03',{tags: '@task-03'}, () => {
+
+    demoQaHomePage.goToElementPage();
+    demoQaHomePage.goToWebTableTab();
+
+    // Click on Add button
+    demoQaHomePage.clickAddButton();
+
+    // Fill in the form
+    demoQaHomePage.enterFirstName(webTestData.first_name);
+    demoQaHomePage.enterLastName(webTestData.last_name);
+    demoQaHomePage.enterEmail(webTestData.email)
+    demoQaHomePage.enterAge(webTestData.age);
+    demoQaHomePage.enterSalary(webTestData.salary);
+    demoQaHomePage.enterDepartment(webTestData.department);
+
+    // Submit the form
+    demoQaHomePage.clickSubmit();
+
+    // Verify the details
+
+    cy.xpath("//div[contains(text(), '"+webTestData.first_name+"')]").should('contain.text', 'muhammad');
+    cy.xpath("//div[contains(text(), '"+webTestData.last_name+"')]").should('contain.text', 'raheel');
+    cy.xpath("//div[contains(text(), '"+webTestData.email+"')]").should('contain.text', 'abc@gmail.com');
+    cy.xpath("//div[contains(text(), '"+webTestData.age+"')]").should('contain.text', '30');
+    cy.xpath("//div[contains(text(), '"+webTestData.salary+"')]").should('contain.text', '5000');
+    cy.xpath("//div[contains(text(), '"+webTestData.department+"')]").should('contain.text', 'QA');
+
+  });
+
 });

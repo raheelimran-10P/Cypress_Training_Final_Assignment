@@ -17,6 +17,17 @@ export class DemoQaHomePage {
     publicCheckbox = "//span[contains(text(), 'Public')]/preceding-sibling::span[@class='rct-checkbox']"; // XPath locator for checkbox
     resultMessage = "#result"; // ID locator for result message
 
+    webTablesMenu = "//span[contains(text(), 'Web Tables')]"; // XPath locator
+    addButton = "//button[contains(text(), 'Add')]"; // XPath locator for Add button
+    firstNameField = "#firstName"; // ID locator for First Name field in form
+    lastNameField = "#lastName"; // ID locator for Last Name field in form
+    emaiField = "#userEmail" // ID locator for Last Name field in form
+    ageField = "#age"; // ID locator for Age field in form
+    salaryField = "#salary"; // ID locator for Salary field in form
+    departmentField = "#department"; // ID locator for Department field in form
+    submitButtonwebtable = "#submit"; // ID locator for Submit button in form
+    tableRows = ".rt-tbody .rt-tr-group"; // CSS locator for table rows
+
     goToElementPage(){
         cy.xpath(this.element_text).click()
     }
@@ -67,6 +78,52 @@ export class DemoQaHomePage {
 
     getResultMessage() {
         return cy.get(this.resultMessage);
+    }
+
+    
+
+    goToWebTableTab() {
+        cy.xpath(this.webTablesMenu).click();
+    }
+
+    clickAddButton() {
+        cy.xpath(this.addButton).click();
+    }
+
+    enterFirstName(firstName) {
+        cy.get(this.firstNameField).type(firstName);
+    }
+
+    enterLastName(lastName) {
+        cy.get(this.lastNameField).type(lastName);
+    }
+
+    enterEmail(email) {
+        cy.get(this.emaiField).type(email);
+    }
+
+    enterAge(age) {
+        cy.get(this.ageField).type(age);
+    }
+
+    enterSalary(salary) {
+        cy.get(this.salaryField).type(salary);
+    }
+
+    enterDepartment(department) {
+        cy.get(this.departmentField).type(department);
+    }
+
+    clickSubmitWebTable() {
+        cy.get(this.submitButton).click();
+    }
+
+    getTableRows() {
+        return cy.get(this.tableRows);
+    }
+
+    getLastTableRow() {
+        return cy.get(this.tableRows).last();
     }
 
 }

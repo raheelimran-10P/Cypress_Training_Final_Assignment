@@ -3,7 +3,13 @@
     "fullname":"raheel",
     "email": "abc@gmail.com",
     "current_address": "fdfdsf sfdf sfdf",
-    "permanent_address": "dfdf fff ss f"
+    "permanent_address": "dfdf fff ss f",
+
+    "first_name":"muhammad",
+    "last_name": "raheel",
+    "age": "30",
+    "salary": "5000",
+    "department":"QA"
 
 }
   
